@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CODIMP Chess</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><span class="logo-dot"></span> CODIMP Chess</div>
+  <div class="header-controls">
+    <select class="mode-select" id="modeSelect">
+      <option value="ai">🤖 1 Player (vs AI)</option>
+      <option value="pvp">👥 2 Players</option>
+    </select>
+    <select class="diff-select" id="diffSelect">
+      <option value="easy">Easy</option>
+      <option value="medium" selected>Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button class="theme-toggle" id="themeToggle">
+      <span id="themeLabel">Light Mode</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <aside class="panel">
+    <div>
+      <h3>Current Turn</h3>
+      <div class="turn-indicator">
+        <div class="turn-dot white active" id="dotWhite"></div>
+        <div class="turn-dot black" id="dotBlack"></div>
+        <span id="turnText" style="font-weight: 600;">White to move</span>
+      </div>
+    </div>
+    <div>
+      <h3>Captured by White</h3>
+      <div class="captured-pieces" id="capturedWhite"></div>
+    </div>
+    <div>
+      <h3>Captured by Black</h3>
+      <div class="captured-pieces" id="capturedBlack"></div>
+    </div>
+    <div class="thinking" id="thinking">
+      <div class="thinking-dots"><span></span><span></span><span></span></div>
+      AI is thinking...
+    </div>
+  </aside>
+
+  <div class="board-container">
+    <div class="status-banner" id="statusBanner"></div>
+    <div class="board" id="board"></div>
+  </div>
+
+  <aside class="panel">
+    <div>
+      <h3>Game Controls</h3>
+      <button class="btn btn-primary" id="resetBtn" style="margin-bottom: 0.75rem;">New Game</button>
+      <button class="btn btn-danger" id="flipBtn">Flip Board</button>
+    </div>
+    <div>
+      <h3>Move History</h3>
+      <div id="moveHistory" style="max-height: 200px; overflow-y: auto; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8;">
+        Game started. White moves first.
+      </div>
+    </div>
+  </aside>
+</main>
+
+<script src="script.js">
+
+</script>
+</body>
+</html>
